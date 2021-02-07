@@ -45,3 +45,21 @@ ul li a {
     width: 100%;
     display: block;
 }
+
+/** single food Style */
+.singleFoodStyle{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    background-color: #fff;
+}
+.singleFoodStyle img{
+    width: 300px;
+}
+
+ul li {
+    font-style: italic;
+    margin-left: 20px;
+    list-style-type: none;
+}
