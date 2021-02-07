@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ddd;
+}
+
+/** Navbar */
+.navbar-brand img{
+    width: 10%;
+}
+ul li a {
+    font-weight: bold;
+    color: #000 !important;
+}
+
+/** form */
+.form-style {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* * card Style */
