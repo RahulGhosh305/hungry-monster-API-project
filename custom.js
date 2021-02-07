@@ -5,7 +5,7 @@ document.getElementById('search-btn').addEventListener('click', function () {
 })
 
 
-//* API fetch
+//* Searches Data By fetch API
 function clickToShow(inputValue) {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`
     fetch(url)
@@ -13,31 +13,26 @@ function clickToShow(inputValue) {
         .then((data) => displayMealItem(data));
 
 
-    const displayMealItem = (meals) => {
-
+        const displayMealItem = (meals) => {
         const cardContainer = document.getElementById("card-container");
         const mealsArray = meals.meals
 
+       
         mealsArray.forEach(meal => {
-            // console.log(meal.strMealThumb)
-
             const cardDiv = document.createElement("div");
             cardDiv.className = "card single-card";
-            const image = document.createElement('img');
-            image.className = 'card-img-top imgSet';
-            image.setAttribute('src', meal.strMealThumb)
-            const cardBody = document.createElement('div')
-            cardBody.className = 'card-body';
-            const h5 = document.createElement('h5');
-            h5.className = 'card-title text-center';
-            h5.innerText = meal.strMeal;
-            cardBody.appendChild(h5);
 
-            cardDiv.appendChild(image);
-            cardDiv.appendChild(cardBody);
+            const cardInfo = `
+            <img src='${meal.strMealThumb}' class='card-img-top'>
+            <div class='card-body'>
+                <h5 class='card-title text-center'>${meal.strMeal}</h5>
+            </div>
+            <button class='btn btn-success' onclick="singleCardDetail('${meal.idMeal}')">Show Details</button>
+            `;
+
+            cardDiv.innerHTML = cardInfo;
             cardContainer.appendChild(cardDiv);
         });
-
     }
 }
 
@@ -45,76 +40,7 @@ function clickToShow(inputValue) {
 
 
 
-
-
-
-
-
-
-
-//* API fetch Original 
-// fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=beef")
-//     .then((response) => response.json())
-//     .then((data) => displayMealItem(data));
-
-
-// const displayMealItem = (meals) => {
-
-//     const cardContainer = document.getElementById("card-container");
-//     const mealsArray = meals.meals
-//     console.log(mealsArray)
-
-//     mealsArray.forEach(meal => {
-//         // console.log(meal.strMealThumb)
-
-//         const cardDiv = document.createElement("div");
-//         cardDiv.className = "card single-card";
-//         const image = document.createElement('img');
-//         image.className = 'card-img-top imgSet';
-//         image.setAttribute('src',meal.strMealThumb)
-//         const cardBody = document.createElement('div')
-//         cardBody.className = 'card-body';
-//         const h5 = document.createElement('h5');
-//         h5.className = 'card-title text-center';
-//         h5.innerText = meal.strMeal;
-//         cardBody.appendChild(h5);
-
-//         cardDiv.appendChild(image);
-//         cardDiv.appendChild(cardBody);
-//         cardContainer.appendChild(cardDiv);
-//     });
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// * lagbe na
-// const cardDiv = document.createElement("div");
-//     cardDiv.className = "card";
-//     const image = document.createElement('img');
-//     image.className = 'card-img-top';
-//     image.setAttribute('src','./icon/food.jpg')
-//     const cardBody = document.createElement('div')
-//     cardBody.className = 'card-body';
-//     const h5 = document.createElement('h5');
-//     h5.className = 'card-title text-center';
-//     cardBody.appendChild(h5);
-
-//     cardDiv.appendChild(image);
-//     cardDiv.appendChild(cardBody);
-//     cardContainer.appendChild(cardDiv);
+//* Individuals Card Details
+function singleCardDetail(id){
+    console.log(id)
+}
