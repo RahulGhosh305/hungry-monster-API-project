@@ -18,9 +18,30 @@ ul li a {
 
 /** form */
 .form-style {
+    width: 30%;
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }
 
-/* * card Style */
+
+/* * Card */
+.box{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.single-card{
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.single-card img{
+    width: 100%;
+    display: block;
+}
