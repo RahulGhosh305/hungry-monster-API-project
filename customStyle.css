@@ -63,3 +63,7 @@ ul li {
     margin-left: 20px;
     list-style-type: none;
 }
+.warn{
+    height: 30px;
+    margin-bottom: 10px;
+}

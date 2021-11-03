@@ -30,7 +30,14 @@ function clickToShow(inputValue) {
             cardContainer.appendChild(cardDiv);
         });
     }
+    document.getElementById('search-input').value = '';
 }
+
+
+//* Search: Enter key trigger.
+document.getElementById("search-input").addEventListener("keyup", event => {
+    if (event.key === "Enter") document.getElementById("search-btn").click();
+});
 
 
 //* Individuals Card Details
